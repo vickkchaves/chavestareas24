@@ -1,1 +1,67 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<title>Evaluación de Alumnos</title> 
+<style> 
+body {
+font-family: Arial, sans-serif;
+ background-color: #f4f4f4;
+ margin: 0; 
+padding: 20px; 
+}
+ h1 { 
+text-align: center; 
+color: #333; 
+}
+ </style> 
+</head> 
+<body> 
+<div class="container">
+<h1>Evaluación de Alumnos</h1>
+ <div class="form-group">
+<label for="apellido">Apellido:</label> 
+<inputtype="text" id="apellido" required> 
+</div>
+ <div class="form-group"> 
+<label for="nombre">Nombre:</label>
+ <inputtype="text" id="nombre" required> 
+</div>
+ <div class="form-group"> 
+<label for="nota">Nota:</label> 
+<inputtype="number" id="nota" min="0" max="10" required> 
+</div> 
+<button class="btn"onclick="evaluarAlumno()">Evaluar</button>
+ <div id="resultado" class="result"></div>
+ </div>
 
+ <script> 
+functionevaluarAlumno() { 
+const apellido = document.getElementById('apellido').value; 
+const nombre = document.getElementById('nombre').value; 
+const nota = parseFloat(document.getElementById('nota').value; 
+const resultado = document.getElementById('resultado'); 
+
+if (apellido && nombre && !isNaN(nota)) { 
+let mensaje = `${apellido}, ${nombre}: `; 
+
+if (nota >= 7) { 
+mensaje += 'Aprobado'; 
+resultado.className = 'result approved'; 
+}
+ else if(nota >= 4 && nota < 7) { 
+mensaje += 'Debe recuperar'; 
+resultado.className = 'result retest'; 
+}
+ else { 
+mensaje += 'Desaprobado'; 
+resultado.className = 'result failed'; 
+} resultado.textContent = mensaje; 
+}
+else { 
+resultado.textContent = 'Por favor, complete todos los campos.'; 
+resultado.className = 'result'; 
+} 
+}
+ </script> 
+</body> 
+</html>
