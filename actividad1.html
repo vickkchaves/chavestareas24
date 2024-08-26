@@ -49,11 +49,11 @@ mensaje += 'Aprobado';
 resultado.className = 'result approved'; 
 }
  else if(nota >= 4 && nota < 7) { 
-mensaje += 'Debe recuperar'; 
+mensaje += 'Desaprobado'; 
 resultado.className = 'result retest'; 
 }
  else { 
-mensaje += 'Desaprobado'; 
+mensaje += 'Aplazo'; 
 resultado.className = 'result failed'; 
 } resultado.textContent = mensaje; 
 }
