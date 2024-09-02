@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Alumnos</title> 
+<style> 
+body {
+font-family: Arial, sans-serif;
+ background-color: #f4f4f4;
+ margin: 0; 
+padding: 20px; 
+}
+ h1 { 
+text-align: center; 
+color: #333; 
+}
+ .form-group {
+ margin-bottom: 15px; }
+
+ .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+ }
+
+ .form-group input {
+ width: 100%;
+ padding: 8px;
+ box-sizing: border-box;
+ border-radius: 4px;
+ border: 1px solid #ddd;
+ }
+
+ .result {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+ padding: 10px;
+  border-radius: 4px;
+  }
+
+ .approved {
+    color: green;
+  }
+
+ .failed {
+  color: red;
+ }
+.retest {
+  color: orange;
+  }
+ </style> 
+</head> 
+<body> 
+<div class="container">
+<h1>Evaluación de Alumnos</h1>
+        <form>
+            <label for="apellido">Apellido:</label> 
+            <input type="text" id="apellido" required> 
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required> 
+            <label for="nota">Nota:</label> 
+            <input type="number" id="nota" min="0" max="10" required> 
+        <button class="btn" onclick="evaluarAlumno()">Evaluar</button>
+        <div id="resultado" class="result"></div>
+    </form>
+
+    <script> 
+        function evaluarAlumno() { 
+            const apellido = document.getElementById('apellido').value; 
+            const nombre = document.getElementById('nombre').value; 
+            const nota = parseFloat(document.getElementById('nota').value); 
+            const resultado = document.getElementById('resultado'); 
+
+            if (apellido && nombre && !isNaN(nota)) { 
+                let mensaje = `${apellido}, ${nombre}: `; 
+
+                if (nota >= 7) { 
+                    mensaje += 'Aprobado'; 
+                    resultado.className = 'result approved'; 
+                } else if (nota >= 4 && nota < 7) { 
+                    mensaje += 'Desaprobado'; 
+                    resultado.className = 'result retest'; 
+                } else { 
+                    mensaje += 'Aplazo'; 
+                    resultado.className = 'result failed'; 
+                } 
+                resultado.textContent = mensaje; 
+            } else { 
+                resultado.textContent = 'Por favor, complete todos los campos correctamente.'; 
+                resultado.className = 'result'; 
+            } 
+        }
+    </script> 
+
+</body> 
+</html>
