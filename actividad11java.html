@@ -54,42 +54,35 @@ color: #333;
 </head> 
 <body> 
 <div class="container">
-<h1>Evaluación de Alumnos</h1>
+<h1>Triángulo es equilátero?</h1>
         <form>
-            <label for="apellido">Apellido:</label> 
-            <input type="text" id="apellido" required> 
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" required> 
-            <label for="nota">Nota:</label> 
-            <input type="number" id="nota" min="0" max="10" required> 
-        <button class="btn" onclick="evaluarAlumno()">Evaluar</button>
+            <label for="lado1">Lado 1:</label> 
+            <input type="number" id="lado1" required> 
+            <label for="lado2">lado2:</label>
+            <input type="number" id="lado2" required> 
+            <label for="lado3">lado3:</label> 
+            <input type="number" id="lado3" min="0" required> 
+        <button class="btn" onclick="evaluarTriangulo()">Es Equilátero?</button>
         <div id="resultado" class="result"></div>
     </form>
 
     <script> 
-        function evaluarAlumno() { 
-            const apellido = document.getElementById('apellido').value; 
-            const nombre = document.getElementById('nombre').value; 
-            const nota = parseFloat(document.getElementById('nota').value); 
+        function evaluarTriangulo() { 
+            const lado1 = parseFloat(document.getElementById('lado1').value);
+            const lado2 = parseFloat(document.getElementById('lado2').value);
+            const lado3 = parseFloat(document.getElementById('lado3').value); 
             const resultado = document.getElementById('resultado'); 
 
-            if (apellido && nombre && !isNaN(nota)) { 
-                let mensaje = `${apellido}, ${nombre}: `; 
-
-                if (nota >= 7) { 
-                    mensaje += 'Aprobado'; 
-                    resultado.className = 'result approved'; 
-                } else if (nota >= 4 && nota < 7) { 
-                    mensaje += 'Desaprobado'; 
-                    resultado.className = 'result retest'; 
+            if (lado1==lado2==lado 3) { 
+                mensaje += 'Es equilátero' 
+                    resultado.className = 'result equilatero'; 
+                }
                 } else { 
-                    mensaje += 'Aplazo'; 
-                    resultado.className = 'result failed'; 
+                    mensaje += 'No es equilátero'; 
+                    resultado.className = 'result no'; 
                 } 
                 resultado.textContent = mensaje; 
-            } else { 
-                resultado.textContent = 'Por favor, complete todos los campos correctamente.'; 
-                resultado.className = 'result'; 
+            } 
             } 
         }
     </script> 
