@@ -1,1 +1,93 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Alumnos</title> 
+<style> 
+body {
+font-family: Arial, sans-serif;
+ background-color: #f4f4f4;
+ margin: 0; 
+padding: 20px; 
+}
+ h1 { 
+text-align: center; 
+color: #333; 
+}
+ .form-group {
+ margin-bottom: 15px; }
 
+ .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+ }
+
+ .form-group input {
+ width: 100%;
+ padding: 8px;
+ box-sizing: border-box;
+ border-radius: 4px;
+ border: 1px solid #ddd;
+ }
+
+ .result {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+ padding: 10px;
+  border-radius: 4px;
+  }
+
+ .approved {
+    color: green;
+  }
+
+ .failed {
+  color: red;
+ }
+.retest {
+  color: orange;
+  }
+ </style> 
+</head> 
+<body> 
+<div class="container">
+<h1>Triángulo es equilátero?</h1>
+        <form>
+            <label for="lado1">Lado 1:</label> 
+            <input type="number" id="lado1" required> 
+            <label for="lado2">lado2:</label>
+            <input type="number" id="lado2" required> 
+            <label for="lado3">lado3:</label> 
+            <input type="number" id="lado3" min="0" required> 
+        <button type="button" class="btn" onclick="evaluarTriangulo()">Es Equilátero?</button>
+        <div id="resultado" class="result"></div>
+    </form>
+
+    <script> 
+        function evaluarTriangulo() { 
+            const lado1 = parseFloat(document.getElementById('lado1').value);
+            const lado2 = parseFloat(document.getElementById('lado2').value);
+            const lado3 = parseFloat(document.getElementById('lado3').value); 
+            const resultado = document.getElementById('resultado');  
+            let mensaje = '';
+
+            if (lado1 == lado2 && lado2 == lado3) { 
+                mensaje = 'Es equilátero'; 
+                resultado.className = 'result approved'; 
+            } 
+            else if (lado1 == lado2 && lado2 != lado3){ 
+                mensaje = 'Es isosceles'; 
+                resultado.className = 'result retest'; }
+          else {
+             mensaje = 'Es escaleno'; 
+                resultado.className = 'result failed'; } 
+
+            resultado.textContent = mensaje; 
+        } 
+    </script> 
+           
+</body> 
+</html>
