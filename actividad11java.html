@@ -71,21 +71,20 @@ color: #333;
             const lado1 = parseFloat(document.getElementById('lado1').value);
             const lado2 = parseFloat(document.getElementById('lado2').value);
             const lado3 = parseFloat(document.getElementById('lado3').value); 
-            const resultado = document.getElementById('resultado'); 
+            const resultado = document.getElementById('resultado');  
+            let mensaje = '';
 
-            if (lado1==lado2==lado 3) { 
-                mensaje += 'Es equilátero' 
-                    resultado.className = 'result equilatero'; 
-                }
-                } else { 
-                    mensaje += 'No es equilátero'; 
-                    resultado.className = 'result no'; 
-                } 
-                resultado.textContent = mensaje; 
+            if (lado1 == lado2 && lado2 == lado3) { 
+                mensaje = 'Es equilátero'; 
+                resultado.className = 'result approved'; 
+            } else { 
+                mensaje = 'No es equilátero'; 
+                resultado.className = 'result failed'; 
             } 
-            } 
-        }
+
+            resultado.textContent = mensaje; 
+        } 
     </script> 
-
+           
 </body> 
 </html>
