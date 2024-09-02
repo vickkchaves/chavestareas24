@@ -78,18 +78,12 @@ color: #333;
                 mensaje = 'Es equilátero'; 
                 resultado.className = 'result approved'; 
             } 
-            else if (lado1 == lado2 && lado2 != lado3 ){ 
-                mensaje = 'Es isosceles'; 
-                resultado.className = 'result retest'; }
-            else if (lado1 != lado2 && lado2 == lado3){ 
-                mensaje = 'Es isosceles'; 
-                resultado.className = 'result retest'; }
-            else if (lado1 != lado2 && lado1 == lado3){ 
-                mensaje = 'Es isosceles'; 
-                resultado.className = 'result retest'; }
+            else if (lado1 != lado2 && lado2 != lado3 ){ 
+                mensaje = 'Es escaleno'; 
+                resultado.className = 'result failed'; }
             else {
-             mensaje = 'Es escaleno'; 
-                resultado.className = 'result failed'; } 
+             mensaje = 'Es isosceles'; 
+                resultado.className = 'result retest'; } 
 
             resultado.textContent = mensaje; 
         } 
