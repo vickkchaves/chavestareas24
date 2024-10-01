@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores</title>
+</head>
+<body>
+    <script>
+      let valor1 = parseFloat(prompt("Ingresa el primer valor:"));
+    let valor2 = parseFloat(prompt("Ingresa el segundo valor:"));
+    let valor3 = parseFloat(prompt("Ingresa el tercer valor:"));
+    
+    
+    function encontrarMayor(num1, num2, num3) {
+        if (num1 >= num2 && num1 >= num3) {
+            return num1 + " es el mayor";
+        } else if (num2 >= num1 && num2 >= num3) {
+            return num2 + " es el mayor";
+        } else {
+            return num3 + " es el mayor";
+        }
+    }
+    
+    let resultado = encontrarMayor(valor1, valor2, valor3);
+    document.write(resultado);
+    </script>
+</body>
+</html>
