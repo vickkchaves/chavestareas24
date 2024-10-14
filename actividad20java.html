@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumatoria </title>
+</head>
+<body>
+    <h1>Suma de números entre 20 y 50 </h1>
+    <script>
+        function sumatoria() {
+            let suma = 0;  
+            for (let n = 1; n <= 10; n++) {
+                let numero = parseFloat(prompt("Ingresa el número " + n + ":"));  
+                
+                if (numero >= 20 & numero <=50) {
+                    suma += numero;  }}
+            document.write ("La suma de los números mayores a 20 es: " + suma);
+        }
+    </script>
+    <button onclick="sumatoria()">Calcular Suma</button>
+</body>
+</html>
