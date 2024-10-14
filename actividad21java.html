@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Números Negativos</title>
+</head>
+<body>
+    <h1>Suma de Números Negativos</h1>
+  <script>
+        function suma() {
+            let cantidad = parseInt(prompt("¿Cuántos números quiere ingresar?"));
+            let sumanumeros = 0; 
+            for (let n = 1; n <= cantidad; n++) {
+                let numero = parseFloat(prompt("Ingresa el número " + n + ":"));
+                if (numero < 0) {
+                    sumanumeros += numero;
+                }
+            }
+
+            document.getElementById("resultado").innerText = "La suma de los números negativos es: " + sumaNegativos;
+        }
+    </script>
+    <button onclick="suma()">Calcular Suma</button>
+    <p id="resultado"></p>
+</body>
+</html>
