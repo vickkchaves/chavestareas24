@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<h1> Suma de 5 valores entre 100 y 200</h1>
+<!-- 
+    Consigna: Pedirle al usuario cinco números mayores a 100 y menores a 200. Se suman solo si cumplen con el criterio pedido. Al final aparece en pantalla la suma total.
+-->
+<body>
+
+    <script>
+        let x = 1;
+        let suma = 0;
+        let valor;
+        while (x <= 5) {
+            valor = parseInt(prompt('Ingrese valor:'));
+            if (valor>=100 && valor<=200) 
+            {suma = suma + valor;}
+            	x = x + 1;
+        }
+        document.write('La suma de los valores entre 100 y 200 es ' + suma + '<br>');
+    </script>
+
+</body>
+</html>
+
