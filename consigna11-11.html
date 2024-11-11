@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<!-- 
+    Consigna: Pedirle al usuario cinco números mayores a 100. Se suman solo si son mayores a 100. Al final aparece en pantalla la suma total.
+-->
+<body>
 
+    <script>
+        let x = 1;
+        let suma = 0;
+        let valor;
+        while (x <= 5) {
+            valor = parseInt(prompt('Ingrese valor:'));
+            if (valor>100) 
+            {suma = suma + valor;}
+            	x = x + 1;
+        }
+        document.write('La suma de los valores de los mayores a 100 es ' + suma + '<br>');
+    </script>
+
+</body>
+</html>
